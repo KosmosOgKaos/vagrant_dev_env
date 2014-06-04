@@ -16,7 +16,7 @@ class bootstrap {
 	returns => [0,100]
 	} 
 	# you can specify the packages in an array ...
-	$enhancers = [ "centos-release-SCL", "strace", "sudo","htop","ccze","ntsysv","vim-enhanced","nano","links","man","finger","wget","telnet","bind-utils","sendmail","chkconfig" ]
+	$enhancers = [ "centos-release-SCL", "strace", "sudo","htop","ccze","ntsysv","vim-enhanced","nano","links","man","finger","wget","telnet","bind-utils","sendmail","chkconfig","figlet" ]
 	package { 
 	$enhancers: ensure => "installed" 
 	}

@@ -1,0 +1,3 @@
+[submodule "modules/motd"]
+	path = modules/motd
+	url = git@github.com:samueljon/samueljon-motd.git
