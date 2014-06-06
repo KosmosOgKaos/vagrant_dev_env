@@ -19,11 +19,32 @@ Virtualbox can be downloaded from https://www.virtualbox.org/wiki/Downloads
 	brew cask install virtualbox
 	brew cask install vagrant
 
+
 ### Linux
 
 ### Windows
 
+
 ## Usage
 
-To startup a Vagrant instance you simply type "vagrant up". 
+Open up a terminal of your choosing in the folder that contains the Vagrantfile.
+
+	Start by fetching the Operating system box file by typing:
+	vagrant box add kk-centos-6.5-x86_64 https://vagrantcloud.com/samueljon/kk-centos-6.5-x86_64.box/version/2/provider/virtualbox.box
+
+	After the box has been downloaded and installed you can startup a Vagrant instance you simply type "vagrant up". 
+	
+	Other commands dealing with vagrant see: vagrant --help
+
+	connect        -- Connects to a shared, remote Vagrant environment
+	destroy        -- Destroys the vagrant environment
+	halt           -- Halts the currently running vagrant environment
+	provision      -- Run the provisioner
+	reload         -- Reload the vagrant environment
+	resume         -- Resumes a suspend vagrant environment
+	ssh            -- SSH into the currently running environment
+	status         -- Shows the status of the current Vagrant environment
+	suspend        -- Suspends the currently running vagrant environment
+	up             -- Creates the vagrant environment
+
 
