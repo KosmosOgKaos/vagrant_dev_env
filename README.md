@@ -31,8 +31,13 @@ Open up a terminal of your choosing in the folder that contains the Vagrantfile.
 
 	Start by fetching the Operating system box file by typing:
 	vagrant box add kk-centos-6.5-x86_64 https://vagrantcloud.com/samueljon/kk-centos-6.5-x86_64.box/version/2/provider/virtualbox.box
+	
+	After the box has been added be sure to enable all git submodules by typing:
+	
+	git submodule init
+	git submodule update
 
-	After the box has been downloaded and installed you can startup a Vagrant instance you simply type "vagrant up". 
+	After the box has been downloaded and submodules have been installed you can startup a Vagrant instance you simply type "vagrant up". 
 	
 	Other commands dealing with vagrant see: vagrant --help
 
