@@ -20,10 +20,24 @@ Virtualbox can be downloaded from https://www.virtualbox.org/wiki/Downloads
 	brew cask install vagrant
 
 
+
 ### Linux
 
 ### Windows
+	
+	Download Virtualbox from https://www.virtualbox.org/wiki/Downloads
+	Download Vagrant from http://www.vagrantup.com/downloads.html
+	
+	Once Vagrant and Virtualbox is installed checkout the development setup from Github from command prompt or from a Git client.
 
+	git clone git@github.com:KosmosOgKaos/vagrant_dev_env.git "name of your project"
+	cd "name of your project"
+	#initialize submodules
+	git submodule init
+	git submodule sync
+
+	#start up your development instance
+	vagrant up
 
 ## Usage
 
