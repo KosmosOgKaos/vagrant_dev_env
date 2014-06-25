@@ -14,10 +14,20 @@ Virtualbox can be downloaded from https://www.virtualbox.org/wiki/Downloads
 
 ### MacOSX
 	
+	#First time setup
 	brew tap caskroom/cask
 	brew install brew-cask
 	brew cask install virtualbox
 	brew cask install vagrant
+	
+	#Checking out the vagrant box and starting up the environment
+	git clone --recursive git@github.com:KosmosOgKaos/vagrant_dev_env.git "name of your project"
+	cd "name of your project"
+	
+	#start up your development instance
+	vagrant up
+
+Note: The initial bootstrap of the environment takes about 5-6 minutes.
 
 
 
@@ -36,19 +46,13 @@ Virtualbox can be downloaded from https://www.virtualbox.org/wiki/Downloads
 	#start up your development instance
 	vagrant up
 
+Note: The initial bootstrap of the environment takes about 5-6 minutes.
+
 ## Usage
 
 Open up a terminal of your choosing in the folder that contains the Vagrantfile.
 
-	Start by fetching the Operating system box file by typing:
-	vagrant box add kk-centos-6.5-x86_64 https://vagrantcloud.com/samueljon/kk-centos-6.5-x86_64.box/version/4/provider/virtualbox.box
-	
-	After the box has been added be sure to enable all git submodules by typing:
-	
-	git submodule init
-	git submodule update
-
-	After the box has been downloaded and submodules have been installed you can startup a Vagrant instance you simply type "vagrant up". 
+	After the box has been downloaded and installed you can startup a Vagrant instance you simply type "vagrant up". 
 	
 	Other commands dealing with vagrant see: vagrant --help
 
@@ -62,5 +66,3 @@ Open up a terminal of your choosing in the folder that contains the Vagrantfile.
 	status         -- Shows the status of the current Vagrant environment
 	suspend        -- Suspends the currently running vagrant environment
 	up             -- Creates the vagrant environment
-
-
