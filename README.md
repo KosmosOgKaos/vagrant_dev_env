@@ -30,12 +30,9 @@ Virtualbox can be downloaded from https://www.virtualbox.org/wiki/Downloads
 	
 	Once Vagrant and Virtualbox is installed checkout the development setup from Github from command prompt or from a Git client.
 
-	git clone git@github.com:KosmosOgKaos/vagrant_dev_env.git "name of your project"
+	git clone --recursive git@github.com:KosmosOgKaos/vagrant_dev_env.git "name of your project"
 	cd "name of your project"
-	#initialize submodules
-	git submodule init
-	git submodule sync
-
+	
 	#start up your development instance
 	vagrant up
 
