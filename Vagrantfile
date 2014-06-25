@@ -10,8 +10,7 @@ Vagrant.configure("2") do |config|
 		puppet.module_path = "modules"
 	end
 
-	# Add box prior to doing a vagrant up : vagrant box add kk-centos-6.5-x86_64 https://vagrantcloud.com/samueljon/kk-centos-6.5-x86_64.box/version/2/provider/virtualbox.box
-	config.vm.box = "kk-centos-6.5-x86_64"
+	config.vm.box = "samueljon/kk-centos-6.5-x86_64.box"
 
 	# Forward guest port 80 to host port 8888 and name mapping
 	config.vm.network :forwarded_port, guest: 80, host: 8888
