@@ -41,7 +41,7 @@ Virtualbox can be downloaded from https://www.virtualbox.org/wiki/Downloads
 Open up a terminal of your choosing in the folder that contains the Vagrantfile.
 
 	Start by fetching the Operating system box file by typing:
-	vagrant box add kk-centos-6.5-x86_64 https://vagrantcloud.com/samueljon/kk-centos-6.5-x86_64.box/version/2/provider/virtualbox.box
+	vagrant box add kk-centos-6.5-x86_64 https://vagrantcloud.com/samueljon/kk-centos-6.5-x86_64.box/version/4/provider/virtualbox.box
 	
 	After the box has been added be sure to enable all git submodules by typing:
 	
