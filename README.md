@@ -13,20 +13,27 @@ Vagrant can be downloaded from https://www.vagrantup.com/downloads
 Virtualbox can be downloaded from https://www.virtualbox.org/wiki/Downloads
 
 ### MacOSX
-	
+```shell
 	#First time setup
 	brew tap caskroom/cask
 	brew install brew-cask
 	brew cask install virtualbox
 	brew cask install vagrant
-	
+	#
+	#Install plugin for vagrant to take care of outdated guest additions.
+	#
+	vagrant plugin install vagrant-vbguest
+	#
 	#Checking out the vagrant box and starting up the environment
+	#
 	git clone --recursive git@github.com:KosmosOgKaos/vagrant_dev_env.git "name of your project"
 	cd "name of your project"
-	
-	#start up your development instance
-	vagrant up
 
+	#
+	#start up your development instance
+	#
+	vagrant up
+```
 Note: The initial bootstrap of the environment takes about 5-6 minutes.
 
 
@@ -38,14 +45,21 @@ Note: The initial bootstrap of the environment takes about 5-6 minutes.
 	Download Virtualbox from https://www.virtualbox.org/wiki/Downloads
 	Download Vagrant from http://www.vagrantup.com/downloads.html
 	
-	Once Vagrant and Virtualbox is installed checkout the development setup from Github from command prompt or from a Git client.
+	Once Vagrant and Virtualbox is installed be sure to install vbguest plugin.
+```shell
+    vagrant plugin install vagrant-vbguest
+```
+	Now you're done with the first time setup.
 
+	Checkout the development setup from Github from command prompt or from a Git client.
+
+```shell
 	git clone --recursive git@github.com:KosmosOgKaos/vagrant_dev_env.git "name of your project"
 	cd "name of your project"
 	
 	#start up your development instance
 	vagrant up
-
+```
 Note: The initial bootstrap of the environment takes about 5-6 minutes.
 
 ## Usage
