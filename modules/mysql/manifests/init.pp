@@ -11,8 +11,9 @@ class mysql {
 
 	#start mysql service
 	service { "mysqld":
-		ensure => running,
-		require   => Package["mysql-server"],
+		ensure  => running,
+		enable => true, 
+		require => Package["mysql-server"],
 	}
 
 	# set mysql password

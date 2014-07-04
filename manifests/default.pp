@@ -8,7 +8,6 @@ if versioncmp($::puppetversion,'3.6.1') >= 0 {
 		allow_virtual => $allow_virtual_packages, 
 	} 
 } 
-
 include bootstrap
 #include tools
 include apache

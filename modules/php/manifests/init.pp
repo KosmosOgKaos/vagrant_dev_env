@@ -25,6 +25,7 @@ class php {
 	]
 	package { $packages:
 		ensure => present,
+		notify => Service['httpd'],
 	}
 
 	file { 'kk_custom.ini':

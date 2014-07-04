@@ -7,6 +7,7 @@ class apache {
 	# Enable the httpd service (same as doing chkconfig httpd on)
 	service { "httpd":
 		ensure  => running,
+		enable  => true,
 		require => Package["httpd"],
 	}
 
