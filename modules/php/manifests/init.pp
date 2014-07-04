@@ -2,6 +2,7 @@ class php {
 	# package install list
 	$packages = [
 		"php",
+		"php-pear",
 		"php-tidy",
 		"php-zipstream",
 		"php-pecl-apc",
@@ -33,5 +34,10 @@ class php {
 		ensure    => file,
 		require  => Package['php'],
 		content => template("php/kk_custom_ini.erb"),
+	}
+
+	exec {"Install Drush":
+		command => "pear channel-discover pear.drush.org && pear install drush/drush",
+		require => Package['php-pear']
 	}
 }
