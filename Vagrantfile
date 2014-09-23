@@ -9,7 +9,13 @@ Vagrant.configure("2") do |config|
 		puppet.manifest_file = "default.pp"
 		puppet.module_path = "modules"
 	end
-
+	
+# Forward Agent
+#
+# Enable agent forwarding on vagrant ssh commands. This allows you to use identities
+# established on the host machine inside the guest. See the manual for ssh-add
+  config.ssh.forward_agent = true
+  
 	config.vm.box = "samueljon/kk-centos-6.5-x86_64.box"
 
 	# Forward guest port 80 to host port 8888 and name mapping
@@ -17,6 +23,25 @@ Vagrant.configure("2") do |config|
 	config.vm.network :forwarded_port, guest: 3306, host: 33067
 	config.vm.hostname = "Lamp"
 	config.vm.synced_folder "webroot/", "/vagrant/webroot/", :owner => "apache"
+
+# Customize provider
+  config.vm.provider :virtualbox do |vb|
+    # RAM and CPU
+    host = RbConfig::CONFIG['host_os']
+
+    # Give VM 1/4 system memory & access to all cpu cores on the host
+    if host =~ /darwin/
+      cpus = `sysctl -n hw.ncpu`.to_i
+      # sysctl returns Bytes and we need to convert to MB
+      mem = `sysctl -n hw.memsize`.to_i / 1024 / 1024 / 4
+    elsif host =~ /linux/
+      cpus = `nproc`.to_i
+      # meminfo shows KB and we need to convert to MB
+      mem = `grep 'MemTotal' /proc/meminfo | sed -e 's/MemTotal://' -e 's/ kB//'`.to_i / 1024 / 4
+    else # sorry Windows folks, I can't help you
+      cpus = 2
+      mem = 1024
+    end
 
 
 	config.vm.post_up_message = "
